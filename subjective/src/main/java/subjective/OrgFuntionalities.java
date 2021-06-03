@@ -22,8 +22,7 @@ abstract class OrgFuntionalities {
 	}
 	
 	public Organisation getRating(int orgId) {
-		for(int i = 0; i < this.organisationsList.size(); i++) {
-			Organisation organisation = this.organisationsList.get(i);
+		for (Organisation organisation : this.organisationsList) {
 			if(organisation.getOrgId() == orgId) {
 				int count = 0; 
 				for(int j = 0; j < organisation.getFinancialStatus().length; j++) {
