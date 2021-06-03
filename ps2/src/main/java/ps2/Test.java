@@ -31,7 +31,7 @@ public class Test {
 	    while (it.hasNext()) {
 	        Map.Entry pair = (Map.Entry)it.next();
 	        System.out.println(pair.getKey() + " = " + pair.getValue().toString());
-	        it.remove(); // avoids a ConcurrentModificationException
+	        it.remove();
 	    }
 
 		

@@ -31,9 +31,7 @@ public abstract class Operations {
 	public ArrayList<Account> calculateBillAndAddAccounts(int connectionId){
 		int days = 30;
 		int multiplier = 1;
-//		System.out.println(this.customerList.size());
-		for(int i = 0; i < this.customerList.size(); i++) {
-			Customer customer = this.customerList.get(i);
+		for (Customer customer : this.customerList) {
 			Account account = new Account();
 			if(customer.getConnectionId() == connectionId) {
 				if(customer.getType().equals("3g") && 

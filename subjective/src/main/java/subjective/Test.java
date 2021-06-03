@@ -35,7 +35,7 @@ public class Test {
 		System.out.println(billing.getRating(6));
 		System.out.println(billing.getRating(7));
 		System.out.println(billing.getRating(8));
-//		System.out.println(billing.getRating(9));
+		System.out.println(billing.getRating(9));
 		
 		ArrayList<Organisation> listRanked = billing.getOrgList('B');
 		

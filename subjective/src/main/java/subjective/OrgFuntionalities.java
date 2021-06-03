@@ -24,11 +24,11 @@ abstract class OrgFuntionalities {
 	public Organisation getRating(int orgId) {
 		for (Organisation organisation : this.organisationsList) {
 			if(organisation.getOrgId() == orgId) {
-				int count = 0; 
-				for(int j = 0; j < organisation.getFinancialStatus().length; j++) {
-					if(organisation.getFinancialStatus()[j] == "Positive")
-						count++; 
-				}
+				int count = 0;
+				
+				for (String status : organisation.getFinancialStatus())
+					if(status == "Positive") count++;
+					
 				if(count == 4) organisation.setOrgRating('A');
 				else if(count >= 2) organisation.setOrgRating('B');
 				else organisation.setOrgRating('C');
@@ -40,10 +40,9 @@ abstract class OrgFuntionalities {
 	
 	public ArrayList<Organisation> getOrgList(char rating){
 		ArrayList<Organisation> list = new ArrayList<Organisation>();
-		for(int i = 0; i < this.organisationsList.size(); i++) {
-			Organisation org = this.organisationsList.get(i);
-			if(org.getOrgRating() == rating)
-				list.add(org);
+		for (Organisation organisation : this.organisationsList) {
+			if(organisation.getOrgRating() == rating)
+				list.add(organisation);
 		}
 		if(list.size() > 0)
 			return list;
